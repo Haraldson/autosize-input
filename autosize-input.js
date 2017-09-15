@@ -65,6 +65,8 @@
       ghost.style.cssText += elementCssText
       ghost.innerHTML = escape(str)
       var width = window.getComputedStyle(ghost).width
+      if(options.elbowroom)
+        width = (parseInt(width.replace(/px/g, ''), 10) + options.elbowroom) + 'px'
       element.style.width = width
       return width
     }
